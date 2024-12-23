@@ -235,8 +235,8 @@
             >;
         };
 
-        EXTRA {
-            display-name = "extra";
+        GAME {
+            display-name = "game";
             bindings = <
 &trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans        &trans  &trans       &trans
 &trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans        &trans  &trans       &trans
