@@ -238,10 +238,10 @@
         GAME {
             display-name = "game";
             bindings = <
-&trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans        &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans        &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans     &trans    &trans  &trans  &trans        &trans  &bootloader  &trans
-                        &trans  &kp SPACE  &trans    &trans  &trans  &kp LEFT_ALT
+&trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans        &trans  &trans       &trans
+&trans  &trans  &kp S   &trans  &trans     &trans          &trans  &trans  &trans        &kp L   &trans       &trans
+&trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans        &trans  &bootloader  &trans
+                        &trans  &kp SPACE  &kp LEFT_ALT    &trans  &trans  &kp LEFT_ALT
             >;
         };
     };
