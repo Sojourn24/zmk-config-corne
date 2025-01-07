@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEF 0
 #define NAV 1
@@ -201,15 +202,15 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&sys_reset   &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4    &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &trans
-&caps_word   &trans              &trans          &kp UP_ARROW  &browsertab      &kp PAGE_UP       &kp N0        &kp N4            &kp N5           &kp N6                   &trans                    &trans
-&bootloader  &trans              &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN     &trans        &kp N1            &kp N2           &kp N3                   &trans                    &trans
-                                                 &trans        &trans           &trans            &trans        &trans            &trans
+&sys_reset   &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4    &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &none
+&none        &none               &none           &kp UP_ARROW  &none            &kp PAGE_UP       &kp N0        &kp N4            &kp N5           &kp N6                   &none                     &none
+&bootloader  &none               &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN     &none         &kp N1            &kp N2           &kp N3                   &none                     &none
+                                                 &none         &none            &none             &none         &none             &none
             >;
         };
 
         SYM {
-            display-name = "Symbols";
+            display-name = "NavSym";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
@@ -218,27 +219,27 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&tog 4  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &sys_reset
-&none   &none     &none           &kp UP_ARROW    &none            &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
-&none   &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &bootloader
-                                  &trans          &trans           &trans       &trans     &trans     &trans
+&none  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &sys_reset
+&none  &none     &none           &kp UP_ARROW    &none            &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &none
+&none  &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &bootloader
+                                 &none           &none            &none        &none      &none      &none
             >;
         };
 
-        ADJ {
-            display-name = "System";
+        Bluetooth {
+            display-name = "BT";
             bindings = <
-&bt BT_SEL 0  &kp F1        &kp F2        &kp F3  &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&bt BT_SEL 1  &trans        &bt BT_PRV    &trans  &bt BT_NXT  &studio_unlock    &trans  &trans  &trans  &trans  &trans   &kp F12
-&bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &none    &none
-                                          &trans  &trans      &trans            &trans  &trans  &trans
+&out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
+&none         &none         &none         &none           &none         &none           &none  &none  &none  &none  &none  &none
+&none         &none         &none         &none           &none         &none           &none  &none  &none  &none  &none  &none
+                                          &bt BT_CLR_ALL  &none         &bt BT_CLR      &none  &none  &none
             >;
         };
 
         GAME {
             display-name = "game";
             bindings = <
-&trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &mo 6
 &trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &kp SPACE  &kp LEFT_ALT    &trans  &trans  &trans
@@ -247,20 +248,26 @@
 
         Settings {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                     &none  &none  &none    &none  &none  &none
+&none       &none  &none  &none  &none  &none             &none  &none  &none  &none  &none  &none
+&caps_word  &none  &none  &none  &none  &studio_unlock    &none  &none  &none  &none  &none  &none
+&none       &none  &none  &none  &none  &none             &none  &none  &none  &none  &none  &none
+                          &none  &none  &none             &none  &none  &none
             >;
+
+            label = "Settings";
+        };
+
+        Num_TR {
+            bindings = <
+&none  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &none
+&none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
+&none  &none   &none   &none   &none   &none     &none   &none   &none   &none   &kp F11  &kp F12
+                       &none   &none   &none     &none   &none   &none
+            >;
+
+            label = "Num";
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        Settings {
-            if-layers = <1 2>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
