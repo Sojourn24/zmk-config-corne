@@ -226,35 +226,24 @@
             >;
         };
 
-        Bluetooth {
-            display-name = "BT";
+        Settings {
+            display-name = "Settings";
             bindings = <
-&out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
-&none         &none         &none         &none           &none         &none           &none  &none  &none  &none  &none  &none
-&none         &none         &none         &none           &none         &none           &none  &none  &none  &none  &none  &none
-                                          &bt BT_CLR_ALL  &none         &bt BT_CLR      &none  &none  &none
+&out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4      &none  &none  &none  &none  &none  &none
+&tog 4        &none         &none         &none           &none         &studio_unlock    &none  &none  &none  &none  &none  &none
+&none         &none         &none         &none           &none         &none             &none  &none  &none  &none  &none  &none
+                                          &bt BT_CLR_ALL  &none         &bt BT_CLR        &none  &none  &none
             >;
         };
 
         GAME {
             display-name = "game";
             bindings = <
-&trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &mo 6
+&trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &mo 5
 &trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &kp SPACE  &kp LEFT_ALT    &trans  &trans  &trans
             >;
-        };
-
-        Settings {
-            bindings = <
-&none       &none  &none  &none  &none  &none             &none  &none  &none  &none  &none  &none
-&caps_word  &none  &none  &none  &none  &studio_unlock    &none  &none  &none  &none  &none  &none
-&none       &none  &none  &none  &none  &none             &none  &none  &none  &none  &none  &none
-                          &none  &none  &none             &none  &none  &none
-            >;
-
-            label = "SET";
         };
 
         Num_TR {
@@ -269,12 +258,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        set {
-            if-layers = <1 2>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
