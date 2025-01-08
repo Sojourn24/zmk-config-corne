@@ -55,6 +55,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        runAsAdmin: runAsAdmin {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RUNASADMIN";
+            bindings = <&kp ENTER>, <&kp LS(LC(ENTER))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -204,7 +213,7 @@
             bindings = <
 &none  &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4    &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &none
 &none  &none               &none           &kp UP_ARROW  &none            &kp PAGE_UP       &kp N0        &kp N4            &kp N5           &kp N6                   &none                     &none
-&none  &none               &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN     &none         &kp N1            &kp N2           &kp N3                   &none                     &none
+&none  &none               &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN     &none         &kp N1            &kp N2           &kp N3                   &none                     &kp LC(LS(ENTER))
                                            &none         &none            &none             &none         &none             &none
             >;
         };
@@ -221,7 +230,7 @@
             bindings = <
 &tog 4  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &none
 &none   &none     &none           &kp UP_ARROW    &none            &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &none
-&none   &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &none
+&none   &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &runAsAdmin
                                   &none           &none            &none        &none      &none      &none
             >;
         };
