@@ -68,7 +68,7 @@
         vd_left: vd_left {
             compatible = "zmk,behavior-mod-morph";
             label = "VD_LEFT";
-            bindings = <&kp LEFT_ARROW>, <&kp LG(LC(LEFT_ARROW))>;
+            bindings = <&kp LEFT>, <&kp LG(LC(LEFT))>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LGUI)>;
@@ -77,7 +77,7 @@
         vd_right: vd_right {
             compatible = "zmk,behavior-mod-morph";
             label = "VD_RIGHT";
-            bindings = <&kp RIGHT_ARROW>, <&kp LG(LC(RIGHT_ARROW))>;
+            bindings = <&kp RIGHT>, <&kp LG(LC(RIGHT))>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LGUI)>;
@@ -238,10 +238,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none        &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4    &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &none
-&togSynergy  &none               &vd_left        &kp UP_ARROW  &vd_right        &kp PAGE_UP       &kp N0        &kp N4            &kp N5           &kp N6                   &none                     &none
-&none        &none               &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN     &none         &kp N1            &kp N2           &kp N3                   &none                     &kp LC(LS(ENTER))
-                                                 &none         &none            &none             &none         &none             &none
+&none                     &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4    &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &none
+&kp LS(LA(LC(NUMBER_5)))  &none               &vd_left        &kp UP_ARROW  &vd_right        &kp PAGE_UP       &kp N0        &kp N4            &kp N5           &kp N6                   &none                     &none
+&none                     &none               &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN     &none         &kp N1            &kp N2           &kp N3                   &none                     &kp LC(LS(ENTER))
+                                                              &none         &none            &none             &none         &none             &none
             >;
         };
 
@@ -255,10 +255,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&tog 4  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &none
-&none   &none     &none           &kp UP_ARROW    &none            &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &none
-&none   &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &runAsAdmin
-                                  &none           &none            &none        &none      &none      &none
+&tog 4  &kp EXCL  &kp AT          &kp HASH          &kp DLLR         &kp PRCNT            &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &none
+&none   &none     &none           &kp UP_ARROW      &none            &kp GRAVE            &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &none
+&none   &none     &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT_ARROW  &kp TILDE            &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &runAsAdmin
+                                  &kp LC(LG(LEFT))  &none            &kp LC(LG(RIGHT))    &none      &none      &none
             >;
         };
 
