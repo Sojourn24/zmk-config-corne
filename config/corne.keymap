@@ -219,10 +219,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &sys_reset
-&none  &none     &none           &kp UP_ARROW    &none            &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &none
-&none  &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &bootloader
-                                 &none           &none            &none        &none      &none      &none
+&tog 4  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &sys_reset
+&none   &none     &none           &kp UP_ARROW    &none            &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &none
+&none   &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &bootloader
+                                  &none           &none            &none        &none      &none      &none
             >;
         };
 
@@ -254,7 +254,7 @@
                           &none  &none  &none             &none  &none  &none
             >;
 
-            label = "Settings";
+            label = "SET";
         };
 
         Num_TR {
@@ -272,7 +272,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        Settings {
+        set {
             if-layers = <1 2>;
             then-layer = <5>;
         };
