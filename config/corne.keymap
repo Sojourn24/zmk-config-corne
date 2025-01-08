@@ -64,6 +64,33 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT)>;
         };
+
+        vd_left: vd_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VD_LEFT";
+            bindings = <&kp LEFT_ARROW>, <&kp LG(LC(LEFT_ARROW))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LGUI)>;
+        };
+
+        vd_right: vd_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VD_RIGHT";
+            bindings = <&kp RIGHT_ARROW>, <&kp LG(LC(RIGHT_ARROW))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LGUI)>;
+        };
+
+        togSynergy: togSynergy {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TOGSYNERGY";
+            bindings = <&kp NUMBER_5>, <&kp LS(LA(LC(NUMBER_5)))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -211,10 +238,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4    &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &none
-&none  &none               &none           &kp UP_ARROW  &none            &kp PAGE_UP       &kp N0        &kp N4            &kp N5           &kp N6                   &none                     &none
-&none  &none               &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN     &none         &kp N1            &kp N2           &kp N3                   &none                     &kp LC(LS(ENTER))
-                                           &none         &none            &none             &none         &none             &none
+&none        &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4    &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &none
+&togSynergy  &none               &vd_left        &kp UP_ARROW  &vd_right        &kp PAGE_UP       &kp N0        &kp N4            &kp N5           &kp N6                   &none                     &none
+&none        &none               &kp LEFT        &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN     &none         &kp N1            &kp N2           &kp N3                   &none                     &kp LC(LS(ENTER))
+                                                 &none         &none            &none             &none         &none             &none
             >;
         };
 
