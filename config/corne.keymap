@@ -186,6 +186,16 @@
             bindings = <&paragreat>;
             key-positions = <20 21>;
         };
+
+        copy_mac {
+            bindings = <&kp LG(C)>;
+            key-positions = <37 38>;
+        };
+
+        paste_mac {
+            bindings = <&kp LG(V)>;
+            key-positions = <36 37>;
+        };
     };
 
     //
