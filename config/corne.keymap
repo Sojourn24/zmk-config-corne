@@ -247,7 +247,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&tog 4  &kp EXCL  &kp AT          &kp HASH              &kp DLLR          &kp PRCNT       &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &mo 3
+&tog 4  &kp EXCL  &kp AT          &kp HASH              &kp DLLR          &kp PRCNT       &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &sl 3
 &none   &none     &none           &kp UP_ARROW          &none             &kp GRAVE       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &none
 &none   &none     &kp LEFT_ARROW  &kp DOWN_ARROW        &kp RIGHT_ARROW   &kp TILDE       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &runAsAdmin
                                   &kp LS(LC(LEFT_ALT))  &kp LC(LEFT_ALT)  &kp LEFT_ALT    &none      &none      &none
