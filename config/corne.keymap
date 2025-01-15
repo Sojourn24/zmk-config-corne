@@ -248,10 +248,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&none  &mt EXCLAMATION N1  &mt AT_SIGN N2      &mt HASH N3    &mt DOLLAR N4  &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7      &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &none
-&none  &none               &kp LC(LA(LS(N5)))  &kp LC(LA(G))  &none          &none             &kp N0        &kp N4                &kp N5           &kp N6                   &none                     &none
-&none  &none               &none               &none          &none          &none             &none         &kp N1                &kp N2           &kp N3                   &none                     &kp LC(LS(ENTER))
-                                               &none          &none          &none             &none         &kp LG(LC(LEFT_ALT))  &none
+&none       &mt EXCLAMATION N1  &mt AT_SIGN N2      &mt HASH N3    &mt DOLLAR N4  &mt PERCENT N5    &mt CARET N6  &mt AMPERSAND N7      &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &none
+&none       &none               &kp LC(LA(LS(N5)))  &kp LC(LA(G))  &none          &none             &kp N0        &kp N4                &kp N5           &kp N6                   &none                     &none
+&sys_reset  &none               &none               &none          &none          &none             &none         &kp N1                &kp N2           &kp N3                   &none                     &kp LC(LS(ENTER))
+                                                    &none          &none          &none             &none         &kp LG(LC(LEFT_ALT))  &none
             >;
         };
 
@@ -277,7 +277,7 @@
             bindings = <
 &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4      &none  &none  &none  &none  &none  &none
 &none         &none         &none         &none           &none         &studio_unlock    &none  &none  &none  &none  &none  &none
-&bootloader   &none         &none         &none           &none         &sys_reset        &none  &none  &none  &none  &none  &none
+&bootloader   &none         &none         &none           &none         &none             &none  &none  &none  &none  &none  &none
                                           &bt BT_CLR_ALL  &none         &bt BT_CLR        &none  &none  &none
             >;
         };
