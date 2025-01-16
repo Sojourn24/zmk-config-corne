@@ -276,7 +276,7 @@
             display-name = "bt";
             bindings = <
 &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4      &none  &none  &none  &none  &none  &none
-&none         &none         &none         &none           &none         &studio_unlock    &none  &none  &none  &none  &none  &none
+&tog 6        &none         &none         &none           &none         &studio_unlock    &none  &none  &none  &none  &none  &none
 &bootloader   &none         &none         &none           &none         &none             &none  &none  &none  &none  &none  &none
                                           &bt BT_CLR_ALL  &none         &bt BT_CLR        &none  &none  &none
             >;
@@ -301,6 +301,17 @@
             >;
 
             label = "Num";
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans          &trans          &trans              &trans            &trans    &trans  &trans             &trans               &trans           &trans                   &trans
+&trans  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LEFT_CONTROL D  &hm LEFT_SHIFT F  &trans    &trans  &hm RIGHT_SHIFT J  &hm RIGHT_CONTROL K  &hm RIGHT_ALT L  &hm RIGHT_GUI SEMICOLON  &trans
+&trans  &trans          &trans          &trans              &trans            &trans    &trans  &trans             &trans               &trans           &trans                   &trans
+                                        &trans              &trans            &trans    &trans  &trans             &trans
+            >;
+
+            label = "Homemods";
         };
     };
 
